@@ -8,14 +8,14 @@ const defaultMJMLDefinition = {
     'border-color': '#000000',
     'border-style': 'solid',
     'border-width': '4px',
+    'margin': '0 auto',
     'padding': '10px 25px',
     'width': '100%'
   }
 }
 const baseStyles = {
   p: {
-    fontSize: '1px',
-    margin: '0 auto'
+    fontSize: '1px'
   }
 }
 const postRender = $ => {
@@ -42,6 +42,7 @@ class Divider extends Component {
     return merge({}, baseStyles, {
       p: {
         borderTop: `${mjAttribute('border-width')} ${mjAttribute('border-style')} ${mjAttribute('border-color')}`,
+        margin: mjAttribute('margin'),
         width: mjAttribute('width')
       }
     })
